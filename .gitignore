@@ -1,0 +1,15 @@
+**.tex
+**.aux
+**.dvi
+**.fdb_latexmk
+**.fls
+**.log
+main.pdf
+**.synctex.gz
+**.toc
+**.bbl
+**.blg
+**.nav
+**.out
+**.snm
+img/origin/
