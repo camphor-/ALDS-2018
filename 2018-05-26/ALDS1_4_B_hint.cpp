@@ -1,16 +1,15 @@
-#include <iostream>
 #include<cstdio>
-using namespace std;
 
 // Aにkeyがあるなら1，ないなら0を返す
-int search(int A[],int n,int key){
-  // TODO
-  // 番兵を使って書き換える
-  A[n] = key;
-  for(int i=0;i<n;i++){
-    if(A[i]==key){
-      return 1;
-    }
+int binarySearch(int A[],int n,int key){
+  int left=0;
+  int right = n;
+  int mid;
+  while(left<right){
+    // TODO
+    // keyがmidにある場合
+    // keyが後半にある場合
+    // keyが前半にある場合
   }
   return 0;
 }
@@ -18,7 +17,7 @@ int search(int A[],int n,int key){
 int main(){
   int n,q;
   scanf("%d",&n);
-  int S[n+1];
+  int S[n];
   for(int i=0;i<n;i++){
     scanf("%d",&S[i]);
   }
@@ -28,7 +27,6 @@ int main(){
   for(int i=0;i<q;i++){
     scanf("%d",&t);
     // TODO
-    // searchして，あったらsumをふやす
   }
   printf("%d\n",sum);
 
