@@ -98,3 +98,24 @@
   - deleteLast
   - deleteKey
 - printList
+
+## 線形探索
+- 前から一致するか調べていくだけ
+- 番兵を用いた高速化
+
+[ALDS1_4_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_A&lang=jp)
+
+## 二分探索
+- ソート済みの配列
+- left, mid, right
+
+### 演習
+- ソート済みの数列が与えられるとする
+[ALDS1_4_B](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=jp)
+
+## ハッシュ
+- ハッシュ関数の結果を使う
+- オープンアドレス法
+  - 衝突が起きたときに，2つ目のハッシュ関数ぶんだけずらす
+
+[ALDS1_4_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_C&lang=jp)
