@@ -47,6 +47,8 @@ int find(char str[]){
   for(i=0;;i++){
     h=(h1(key)+i*h2(key)) % M;
     // TODO
+    // 文字列が一致する strcmp(H[h],str)==0
+    // 文字列が入っていない strlen(H[h])==0s
   }
   return 0;
 }
@@ -58,6 +60,7 @@ int insert(char str[]){
   for(i=0;;i++){
     h=(h1(key)+i*h2(key)) % M;
     // TODO
+    // 文字列の挿入 strcpy(H[h],str)
   }
   return 0;
 }
