@@ -100,7 +100,6 @@ type Solver interface {
 
 type ExhaustiveSolver struct {
 	problems *Problems
-	partialSum int
 }
 
 func NewExhaustiveSolver() Solver {
@@ -131,4 +130,48 @@ func (s *ExhaustiveSolver) solve(p problem) bool {
 		m: p.m - s.problems.A[p.i],
 		i: p.i + 1,
 	})
+}
+
+type DPSolver struct {
+	problems *Problems
+	memo map[problem]bool
+}
+
+func NewDPSolver() Solver {
+	return &DPSolver{
+		memo: make(map[problem]bool),
+	}
+}
+
+func (s *DPSolver) SolveAll(p *Problems) {
+	s.problems = p
+	for mIdx, m := range s.problems.M {
+		s.problems.Answer[mIdx] = s.solve(problem{
+			m: m,
+			i: 0,
+		})
+	}
+}
+
+func (s *DPSolver) solve(p problem) bool {
+	if r, ok := s.memo[p]; ok {
+		return r
+	}
+	if p.m == 0 {
+		s.memo[p] = true
+		return true
+	}
+	if p.i >= len(s.problems.A) {
+		s.memo[p] = false
+		return false
+	}
+	r := s.solve(problem{
+		m: p.m,
+		i: p.i+1,
+	}) || s.solve(problem{
+		m: p.m - s.problems.A[p.i],
+		i: p.i + 1,
+	})
+	s.memo[p] = r
+	return r
 }

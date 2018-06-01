@@ -6,6 +6,7 @@ import (
 
 
 func main() {
+	/* Read problems from stdin */
 	problems, err := exhaustive_search.NewProblemsFromStdin()
 	if err != nil {
 		panic(err)
@@ -13,7 +14,7 @@ func main() {
 
 	/* inject solver */
 	solver := exhaustive_search.NewExhaustiveSolver()
-	//solver := DynamicSolver()
+	//solver := DPSolver()
 
 	/* Solve */
 	solver.SolveAll(problems)
