@@ -1,0 +1,6 @@
+[package]
+name = "counting_sort"
+version = "0.1.0"
+authors = ["Yusuke Sangenya <longinus.eva@gmail.com>"]
+
+[dependencies]
