@@ -33,7 +33,7 @@ fn merge(series: &mut Vec<u32>, left: usize, mid: usize, right: usize) {
         unsafe {
             COMP_COUNT += 1;
         }
-        if ls[li] >= rs[ri] {
+        if ls[li] > rs[ri] {
             series[i] = rs[ri];
             ri += 1;
         } else {

@@ -4,7 +4,7 @@ fn swap<T: Clone>(series: &mut Vec<T>, i: usize, j: usize) {
     series[j] = tmp;
 }
 
-fn partition<T: Ord + Clone + std::fmt::Debug>(series: &mut Vec<T>, p: usize, r: usize) -> usize {
+fn partition<T: Ord + Clone>(series: &mut Vec<T>, p: usize, r: usize) -> usize {
     let x = series[r].clone();
     let mut i = p;
     for j in p..r {
