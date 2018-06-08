@@ -12,18 +12,18 @@ fn main() {
     let input_series: Vec<usize> = input[1].split_whitespace().map(|e| e.parse().unwrap()).collect::<Vec<usize>>();
 
     // カウンタ配列を生成
-    let max_series_element = 10_000;
-    let mut counting: Vec<usize> = vec![0; max_series_element];
-    for e in &input_series {
+    let k = 10_000;
+    let mut counting: Vec<usize> = vec![0; k];
+    for e in &input_series { // O(n)
         counting[*e] += 1;
     }
-    for i in 1..max_series_element {
+    for i in 1..k { // O(k)
         counting[i] += counting[i-1];
     }
 
     // カウンタ配列をもとに出力配列を作成
     let mut output_series = vec![0; n];
-    for j in (0..n).rev() {
+    for j in (0..n).rev() { // O(n)
         let target_elem = input_series[j];
         let output_position = counting[target_elem] - 1;
         output_series[output_position] = target_elem;
