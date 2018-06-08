@@ -1,0 +1,6 @@
+[package]
+name = "number_of_inversions"
+version = "0.1.0"
+authors = ["Yusuke Sangenya <longinus.eva@gmail.com>"]
+
+[dependencies]
