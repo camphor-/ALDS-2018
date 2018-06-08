@@ -1,0 +1,45 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Presentation</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/white.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.min.css" />
+
+<script>
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ?
+             'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.min.css' :
+             'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.min.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<div class="reveal">
+    <div class="slides">
+            <section data-markdown="presentation.md"
+                     data-separator="^\n---$"
+                     data-separator-vertical="^\n>>>$"
+                     data-notes="^Note:"
+                     data-charset="utf-8">
+            </section>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.min.js"></script>
+<script>
+    Reveal.initialize({
+        progress: true,
+        history: true,
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; }},
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }},
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/markdown.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/zoom-js/zoom.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/highlight/highlight.min.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); }}
+        ]
+    });
+</script>
