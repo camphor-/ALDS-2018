@@ -15,6 +15,7 @@ fn main() {
     println!("{}", cnt);
 }
 
+// 反転数をreturnするようになってる
 fn merge<T: Ord + Clone>(series: &mut Vec<T>, left: usize, mid: usize, right: usize) -> u64 {
     let ls = series[left..mid].to_vec();
     let rs = series[mid..right].to_vec();
@@ -32,7 +33,7 @@ fn merge<T: Ord + Clone>(series: &mut Vec<T>, left: usize, mid: usize, right: us
         } else if ls[li] > rs[ri] {
             series[i] = rs[ri].clone();
             ri += 1;
-            inv_cnt += ls.len() - li;
+            inv_cnt += ls.len() - li; // 反転数を数えている
         } else {
             series[i] = ls[li].clone();
             li += 1;
@@ -41,6 +42,7 @@ fn merge<T: Ord + Clone>(series: &mut Vec<T>, left: usize, mid: usize, right: us
     return inv_cnt as u64;
 }
 
+// 反転数をreturnするようになってる
 fn merge_sort<T: Ord + Clone>(series: &mut Vec<T>, left: usize, right: usize) -> u64 {
     if left + 1 < right {
         let mid = (left + right) / 2;
