@@ -8,6 +8,7 @@
 - クイックソート
 - 計数ソート
 - 反転数
+- 最小コストソート
 
 ---
 ## マージソート
@@ -139,7 +140,7 @@
 ---
 ## 反転数
 
-[Sort II - Counting Sort](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_A&lang=jp)
+[Recursion / Divide and Conquer - The Number of Inversions](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=jp)
 
 ---
 ### 反転数とはなにか
@@ -166,3 +167,42 @@
 ### 計算量
 
 - マージソートと同じなので **O(n log(n))**
+
+---
+## 最小コストソート
+
+[Sort II - Minimum Cost Sort](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_6_D&lang=jp)
+
+---
+### 最小コストソートとはなにか
+
+- 配列の要素の大きさが「重さ」だと考える
+- 2つの要素を入れ替えるとき、その「重さ」の和のコストがかかる
+- ある配列をソートするときの最小のコストを求める
+
+---
+### アルゴリズム
+
+- 配列をソートする
+- もとの配列とソート済み配列を見比べて、各要素がどこに移動したのかを調べる
+- 要素の「サイクル」を見つける
+
+---
+### アルゴリズム
+
+- 各サイクル内での最小コストは
+  - サイクル内で完結する場合：
+    - ** sum(w) + (n-2) × min(w) **
+  - 最小値を *借りてくる* 場合：
+    - ** sum(w) + min(w) + (n+1) × x **
+- 上記２パターンについてコストを計算し、小さい方を採用する
+
+---
+### 実装
+
+- 間に合いませんでした m(\_ \_)m
+- 「サイクル」のデータ構造はHashMapで行ける
+- みんなで実装しよう！
+
+---
+# おしまい
