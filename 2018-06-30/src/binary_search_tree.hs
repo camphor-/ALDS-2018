@@ -2,10 +2,7 @@
 import Control.Monad
 
 data BSTree a = Nil
-              | Node { key :: a
-                     , left :: BSTree a
-                     , right :: BSTree a
-                     }
+              | Node a (BSTree a) (BSTree a)
 
 insert :: Ord a => a -> BSTree a -> BSTree a
 insert v Nil = Node v Nil Nil
@@ -22,10 +19,10 @@ delete v Nil = Nil
 delete v (Node v' l r) | v == v' = merge l r
                        | otherwise = Node v' (delete v l) (delete v r)
   where
-    merge Nil Nil = Nil
-    merge Nil r = r
-    merge l Nil = l
-    merge l r = let x = findMin l in Node x l (delete x r)
+    merge Nil Nil = Nil -- case 1
+    merge Nil r = r     -- case 2
+    merge l Nil = l     -- case 2
+    merge l r = let x = findMin l in Node x l (delete x r) -- case 3
 
     findMin (Node x Nil _) = x
     findMin (Node _ l _) = findMin l
