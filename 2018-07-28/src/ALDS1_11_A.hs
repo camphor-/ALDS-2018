@@ -7,4 +7,8 @@ main = do
   ms <- replicateM n $ do
     i:_:xs <- map (read @Int) . words <$> getLine
     return (i,xs) 
-  return ()
+  let format = unlines . map (unwords . map show)
+  putStr . format $ trans n ms
+
+trans :: Int -> [(Int,[Int])] -> [[Int]]
+trans n g = [[if i `elem` ch then 1 else 0 | i <- [1..n]] | (_,ch) <- g]
