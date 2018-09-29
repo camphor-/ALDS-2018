@@ -20,7 +20,7 @@
 2つのグラフGとG'について、G'の頂点集合と辺集合の両方がGの頂点集合と辺集合の部分集合となっているとき、G'をGの部分グラフという。
 
 ### グラフの表現
-[ALDS1_11_A]()
+[ALDS1_11_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_A&lang=jp)
 
 - 隣接リスト表現: 各頂点に対して隣接する頂点のリストを保持する
   - ノード数x辺の数のメモリが必要
@@ -30,19 +30,19 @@
   - 双方向が表現できない (?)
 
 ### 深さ優先探索
-[ALDS1_11_B]()
+[ALDS1_11_B](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_B&lang=jp)
 
 実装:
 - 再帰呼び出し
 - スタック
 
 ### 幅優先探索
-[ALDS1_11_C]()
+[ALDS1_11_C](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C&lang=jp)
 
 - キューを使って実装できる
 
 ### 連結成分
-[ALDS1_11_D]()
+[ALDS1_11_D](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_D&lang=jp)
 
 グラフの任意の2頂点に対して、片方からもう片方へのパスが存在するとき、そのグラフは連結であるという。
 
@@ -50,7 +50,7 @@ DFS を使って実装する
 
 ## 第13章 重み付きグラフ
 ### 最小全域木
-[ALDS1_12_A]()
+[ALDS1_12_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A&lang=jp)
 
 グラフの全域木とは、グラフの全ての頂点を含む部分グラフであり、木である限りできるだけ多くの辺を持つものである。
 あるグラフに対して複数の全域木が存在しうる。
@@ -61,8 +61,10 @@ DFS を使って実装する
 1. グラフから任意の頂点を選び、木のルートとする
 2. 木に属する頂点から木に属していない頂点への辺のうち重さが最小のものを選びその頂点を木に追加する
 
+See: クラスカルのアルゴリズム ([GRL_2_A](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp))
+
 ### 単一始点最短経路
-[ALDS1_12_B]()
+[ALDS1_12_B](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_B&lang=jp)
 
 ダイクストラのアルゴリズム
 - 候補の頂点のなかで最も近いものをとる
