@@ -1,7 +1,10 @@
+import Control.Applicative
 import Control.Monad
 import Control.Monad.Trans.RWS
 import qualified Data.IntMap as M
 import Data.List
+
+import Debug.Trace
 
 type Graph = M.IntMap [(Int,Int)]
 data Info = Info
@@ -31,7 +34,7 @@ sp [] = []
 sp (v:w:res) = (v,w):sp res
 
 solve :: Graph -> [(Int,Int)]
-solve g = sortOn fst . snd $ evalRWS dijkstra g i0
+solve g = sort . snd $ evalRWS dijkstra g i0
   where i0 = Info [] (M.singleton 0 0)
 
 dijkstra :: VM ()
@@ -49,9 +52,10 @@ getNext = do
 findNext :: M.IntMap Int -> (Int,Int)
 findNext = M.foldlWithKey' (\(x0,w0) x1 w1 -> if w0 < w1 then (x0,w0) else (x1,w1)) (maxBound, maxBound)
 
+-- FIX ME:
+-- バグっている
 visit :: (Int,Int) -> VM ()
 visit (x,w) = do
-  tell [(x,w)]
   (Info vs ns) <- get
   let vs' = x:vs
   ys <- reader (M.!x)
